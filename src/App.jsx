@@ -30,6 +30,16 @@ function App() {
     if (id) setApproveReviewId(id)
   }, [])
 
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault()
+      }
+    }
+    document.addEventListener('contextmenu', handleContextMenu)
+    return () => document.removeEventListener('contextmenu', handleContextMenu)
+  }, [])
+
   return (
     <div className="app-container">
       <Navbar activePage={activePage} onNavigate={setActivePage} />
