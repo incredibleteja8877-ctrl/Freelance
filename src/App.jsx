@@ -13,6 +13,7 @@ import Reviews from './Components/Reviews.jsx'
 import Footer from './Components/Footer.jsx'
 import WhatsAppButton from './Components/WhatsAppButton.jsx'
 import ApproveReview from './Components/ApproveReview.jsx'
+import ReviewPopup from './Components/ReviewPopup.jsx'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
@@ -68,6 +69,7 @@ function App() {
 
       <Footer />
       <WhatsAppButton />
+      <ReviewPopup />
       {approveReviewId && (
         <ApproveReview reviewId={approveReviewId} onDone={() => setApproveReviewId(null)} />
       )}
