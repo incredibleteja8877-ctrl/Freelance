@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/SSD\ background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+h1,h2,h3{
+  color: #111;
+}
