@@ -32,7 +32,7 @@ nav li{
 }
 .hero{
   text-align: center;
-  padding: 80px 32px;
+  padding: 48px 32px;
   background-color: rgba(249,246,241,0.5);
 }
 .hero h1{
@@ -616,9 +616,21 @@ nav li{
   text-align: center;
 }
 
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+  justify-content: center;
   gap: 24px;
   margin-top: 32px;
 }

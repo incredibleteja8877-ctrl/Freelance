@@ -14,6 +14,7 @@ import Footer from './Components/Footer.jsx'
 import WhatsAppButton from './Components/WhatsAppButton.jsx'
 import ApproveReview from './Components/ApproveReview.jsx'
 import ReviewPopup from './Components/ReviewPopup.jsx'
+import FadeInSection from './Components/FadeInSection.jsx'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
@@ -36,10 +37,10 @@ function App() {
       {activePage === 'home' && (
         <div className="page">
           <Hero onViewSchedule={() => setActivePage('classes')} />
-            <Highlights />
-            <Gallery />
-            <News />
-            <Reviews />
+          <FadeInSection><Highlights /></FadeInSection>
+          <FadeInSection><Reviews /></FadeInSection>
+          <FadeInSection><Gallery /></FadeInSection>
+          <FadeInSection><News /></FadeInSection>
         </div>
       )}
 
