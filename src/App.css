@@ -75,6 +75,7 @@ nav li{
   padding: 24px 28px;
   background-color: rgba(249, 246, 241, 0.8);
   border-left: 4px solid #b8860b;
+  border-right: 4px solid #b8860b;
   border-radius: 8px;
   font-style: italic;
   font-size: 18px;
@@ -323,7 +324,7 @@ nav li{
 .whatsapp-button {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  left: 24px;
   width: 56px;
   height: 56px;
   background-color: #25d366;
@@ -344,9 +345,33 @@ nav li{
   margin-top: auto;
 }
 .visit-us {
-  max-width: 600px;
+  max-width: 900px;
   margin: 24px auto 0;
   text-align: center;
+}
+
+.branches-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.branch-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 420px;
+  background-color: rgba(249, 246, 241, 0.75);
+  border: 3px solid #b8860b;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.branch-card h4 {
+  color: #b8860b;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .visit-us h3 {

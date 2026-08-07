@@ -46,29 +46,60 @@ function Contact() {
       <p>Have a question? Send us a message and we'll get back to you.</p>
 
       <div className="visit-us">
-        <h3>Visit Us — Shapur Branch</h3>
-        <p className="visit-address">
-          H.No: 32-396, SSD Yoga Shala & Kalakshethra, near Vivekananda High School, Shapur Nagar, Jeedimetla, Hyderabad, Telangana 500055
-        </p>
-        <div className="map-embed">
-          <iframe
-            title="SSD Yogashala Shapur Branch Location"
-            src="https://www.google.com/maps?q=SSD+Yoga+Shala+%26+Kalakshethra,+Shapur+Nagar,+Jeedimetla,+Hyderabad,+Telangana+500055&output=embed"
-            width="100%"
-            height="300"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
+        <h3>Visit Us</h3>
+        <div className="branches-grid">
+          <div className="branch-card">
+            <h4>Shapur Branch</h4>
+            <p className="visit-address">
+              H.No: 32-396, SSD Yoga Shala & Kalakshethra, near Vivekananda High School, Shapur Nagar, Jeedimetla, Hyderabad, Telangana 500055
+            </p>
+            <div className="map-embed">
+              <iframe
+                title="SSD Yogashala Shapur Branch Location"
+                src="https://www.google.com/maps?q=SSD+Yoga+Shala+%26+Kalakshethra,+Shapur+Nagar,+Jeedimetla,+Hyderabad,+Telangana+500055&output=embed"
+                width="100%"
+                height="260"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/dSq5ebTc93xCuVRN8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="directions-btn"
+            >
+              Get Directions
+            </a>
+          </div>
+
+          <div className="branch-card">
+            <h4>Suraram Branch</h4>
+            <p className="visit-address">
+              SSD Yoga Shala & Kalakshethra, Suraram, Hyderabad, Telangana
+            </p>
+            <div className="map-embed">
+              <iframe
+                title="SSD Yogashala Suraram Branch Location"
+                src="https://www.google.com/maps?q=17.5424742,78.4252753&output=embed"
+                width="100%"
+                height="260"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/K9eQ2QZ9oxtJQcnG7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="directions-btn"
+            >
+              Get Directions
+            </a>
+          </div>
         </div>
-        <a
-          href="https://maps.app.goo.gl/dSq5ebTc93xCuVRN8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="directions-btn"
-        >
-          Get Directions
-        </a>
       </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>

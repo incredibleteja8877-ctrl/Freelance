@@ -23,12 +23,6 @@ function About(){
                 </p>
             </div>
 
-            <ul className="about-highlights">
-                <li>Certified Instructors</li>
-                <li>Small class sizes</li>
-                <li>All levels welcome</li>
-            </ul>
-
             <div className="leaders-grid">
                 <div className="vision-card">
                     <img src={malleshPhoto} alt="Kowda Mallesh" className="chairman-photo" />
