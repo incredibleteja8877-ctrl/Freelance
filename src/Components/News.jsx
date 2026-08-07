@@ -24,6 +24,7 @@ function News() {
             src={clip}
             alt="Press coverage of SSD Yogashala"
             className="news-clipping"
+            loading="lazy"
             onClick={() => setSelectedImage(clip)}
           />
         ))}

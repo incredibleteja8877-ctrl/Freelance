@@ -77,7 +77,7 @@ function Trainers() {
                         {trainers.filter((t) => t.category === cat).map((t) => (
                             <div className="trainer-card" key={t.id}>
                                 {t.photo ? (
-                                    <img src={t.photo} alt={t.name} className="trainer-photo" />
+                                    <img src={t.photo} alt={t.name} className="trainer-photo" loading="lazy" />
                                 ) : (
                                     <div className="trainer-avatar">{t.initials}</div>
                                 )}

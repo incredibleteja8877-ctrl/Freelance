@@ -109,6 +109,7 @@ function Gallery() {
                     src={photo}
                     alt={event.title}
                     className="gallery-photo"
+                    loading="lazy"
                     onClick={() => setSelectedImage(photo)}
                   />
                 ))}

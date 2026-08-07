@@ -25,7 +25,7 @@ function Highlights() {
     <section className="highlights">
       <div className="highlights-track">
         {loopedHighlights.map((photo, index) => (
-          <img key={index} src={photo} alt="SSD Yogashala highlight" className="highlights-photo" />
+          <img key={index} src={photo} alt="SSD Yogashala highlight" className="highlights-photo" loading="lazy" />
         ))}
       </div>
     </section>

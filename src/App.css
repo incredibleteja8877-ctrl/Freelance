@@ -4,10 +4,15 @@ nav {
   justify-content: space-between;
   padding: 16px 32px;
   background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 500;
 }
 nav h2{
-  color: #fff;
-  font-size: 20px;
+  color: #f4d160;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
 }
 nav ul{
   display: flex;
@@ -17,6 +22,20 @@ nav ul{
 nav li{
   color: #fff;
   cursor: pointer;
+}
+.page {
+  animation: pageFadeIn 0.4s ease;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .logo-wrap{
   width: 64px;
@@ -261,7 +280,7 @@ nav li{
   }
 
   nav h2 {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
   }
 
