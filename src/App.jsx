@@ -9,6 +9,7 @@ import Contact from './Components/Contact.jsx'
 import Gallery from './Components/Gallery.jsx'
 import Highlights from './Components/Highlights.jsx'
 import News from './Components/News.jsx'
+import Reviews from './Components/Reviews.jsx'
 import Footer from './Components/Footer.jsx'
 import WhatsAppButton from './Components/WhatsAppButton.jsx'
 
@@ -29,6 +30,7 @@ function App() {
             <Highlights />
             <Gallery />
             <News />
+            <Reviews />
         </div>
       )}
 
