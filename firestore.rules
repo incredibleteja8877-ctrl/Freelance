@@ -45,8 +45,11 @@ service cloud.firestore {
                     && request.resource.data.comment.size() > 0
                     && request.resource.data.comment.size() < 1000
                     && request.resource.data.approved == false;
-      allow read: if resource.data.approved == true;
-      allow update, delete: if false;
+      allow get: if true;
+      allow list: if resource.data.approved == true;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['approved'])
+                    && request.resource.data.approved == true;
+      allow delete: if false;
     }
   }
 }

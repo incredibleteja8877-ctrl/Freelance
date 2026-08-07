@@ -12,13 +12,21 @@ import News from './Components/News.jsx'
 import Reviews from './Components/Reviews.jsx'
 import Footer from './Components/Footer.jsx'
 import WhatsAppButton from './Components/WhatsAppButton.jsx'
+import ApproveReview from './Components/ApproveReview.jsx'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
+  const [approveReviewId, setApproveReviewId] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [activePage])
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const id = params.get('approveReview')
+    if (id) setApproveReviewId(id)
+  }, [])
 
   return (
     <div className="app-container">
@@ -60,6 +68,9 @@ function App() {
 
       <Footer />
       <WhatsAppButton />
+      {approveReviewId && (
+        <ApproveReview reviewId={approveReviewId} onDone={() => setApproveReviewId(null)} />
+      )}
     </div>
   )
 }

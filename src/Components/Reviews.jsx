@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { collection, addDoc, query, where, orderBy, getDocs } from 'firebase/firestore'
 import { db } from '../firebase.js'
+import emailjs from '@emailjs/browser'
 
 function Reviews() {
   const [reviews, setReviews] = useState([])
@@ -32,13 +33,28 @@ function Reviews() {
     }
     setStatus('sending')
     try {
-      await addDoc(collection(db, 'reviews'), {
+      const docRef = await addDoc(collection(db, 'reviews'), {
         name,
         rating,
         comment,
         approved: false,
         createdAt: new Date(),
       })
+
+      const approveLink = `${window.location.origin}/?approveReview=${docRef.id}`
+
+      await emailjs.send(
+        'service_7pn5rm7',
+        'template_d20nbt3',
+        {
+          name: `[Review] ${name}`,
+          email: '',
+          phone: approveLink,
+          message: `⭐ Rating: ${rating}/5\n\n"${comment}"`,
+        },
+        '4NpBq4MX04_CNeeXp'
+      )
+
       setStatus('sent')
       setName('')
       setRating(0)
