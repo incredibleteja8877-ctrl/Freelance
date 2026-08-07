@@ -3,6 +3,15 @@ import { collection, addDoc, query, where, orderBy, getDocs } from 'firebase/fir
 import { db } from '../firebase.js'
 import emailjs from '@emailjs/browser'
 
+function getInitials(name) {
+  return name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((word) => word[0].toUpperCase())
+    .join('')
+}
+
 function Reviews() {
   const [reviews, setReviews] = useState([])
   const [showForm, setShowForm] = useState(false)
@@ -64,14 +73,34 @@ function Reviews() {
     }
   }
 
+  const averageRating =
+    reviews.length > 0
+      ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
+      : 0
+  const roundedAverage = Math.round(averageRating)
+
   return (
     <section className="reviews">
       <h2>What Our Students Say</h2>
+
+      {reviews.length > 0 && (
+        <div className="reviews-summary">
+          <span className="reviews-summary-score">{averageRating}</span>
+          <div className="reviews-summary-stars">
+            {'★'.repeat(roundedAverage)}
+            {'☆'.repeat(5 - roundedAverage)}
+          </div>
+          <span className="reviews-summary-count">
+            based on {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
+          </span>
+        </div>
+      )}
 
       {reviews.length > 0 ? (
         <div className="reviews-grid">
           {reviews.map((review, index) => (
             <div className="review-card" key={index}>
+              <div className="review-avatar">{getInitials(review.name)}</div>
               <div className="review-stars">
                 {'★'.repeat(review.rating)}
                 {'☆'.repeat(5 - review.rating)}

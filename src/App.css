@@ -653,6 +653,45 @@ nav li{
   margin-top: 24px;
 }
 
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.reviews-summary-score {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111;
+}
+
+.reviews-summary-stars {
+  color: #b8860b;
+  font-size: 24px;
+}
+
+.reviews-summary-count {
+  color: #777;
+  font-size: 14px;
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #b8860b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
 .write-review-btn {
   margin-top: 32px;
   background-color: #b8860b;
