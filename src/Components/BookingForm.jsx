@@ -12,6 +12,7 @@ function BookingForm({ classInfo, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (status === 'sending') return
     setStatus('sending')
 
     try {
@@ -41,6 +42,7 @@ function BookingForm({ classInfo, onClose }) {
 
       setStatus('booked')
     } catch (error) {
+      console.error(error)
       setStatus('error')
     }
   }
@@ -90,7 +92,7 @@ function BookingForm({ classInfo, onClose }) {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button type="submit">
+              <button type="submit" disabled={status === 'sending'}>
                 {status === 'sending' ? 'Booking...' : 'Confirm Booking'}
               </button>
               {status === 'error' && <p className="error-msg">Something went wrong. Please try again.</p>}

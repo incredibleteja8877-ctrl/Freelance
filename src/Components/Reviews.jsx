@@ -36,6 +36,7 @@ function Reviews() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (status === 'sending') return
     if (rating === 0) {
       setStatus('norating')
       return
@@ -69,6 +70,7 @@ function Reviews() {
       setRating(0)
       setComment('')
     } catch (error) {
+      console.error(error)
       setStatus('error')
     }
   }
@@ -170,7 +172,7 @@ function Reviews() {
                     required
                   />
 
-                  <button type="submit">
+                  <button type="submit" disabled={status === 'sending'}>
                     {status === 'sending' ? 'Submitting...' : 'Submit Review'}
                   </button>
 

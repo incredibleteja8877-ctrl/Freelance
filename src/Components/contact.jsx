@@ -13,6 +13,7 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (status === 'sending') return
     setStatus('sending')
 
     try {
@@ -36,6 +37,7 @@ function Contact() {
       setPhone('')
       setMessage('')
     } catch (error) {
+      console.error(error)
       setStatus('error')
     }
   }
@@ -137,14 +139,16 @@ function Contact() {
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-        <button type="submit">Send Message</button>
+        <button type="submit" disabled={status === 'sending'}>
+          {status === 'sending' ? 'Sending...' : 'Send Message'}
+        </button>
       </form>
 
       {status === 'sending' && <p>Sending...</p>}
       {status === 'sent' && <p className="success-msg">Message sent! We'll get back to you soon.</p>}
       {status === 'error' && <p className="error-msg">Something went wrong. Please try again.</p>}
 
-      <p>Or email us directly at <a href="mailto:ssdyct25@gmail.com">ssdyct25@gmail.com</a></p>
+      <p>Or reach us directly at <a href="mailto:ssdyct25@gmail.com">ssdyct25@gmail.com</a> or call <a href="tel:+919030405476">+91 90304 05476</a></p>
     </section>
   )
 }

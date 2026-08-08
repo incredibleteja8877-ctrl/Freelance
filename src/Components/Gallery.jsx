@@ -42,6 +42,7 @@ const categories = [
         title: 'International Yoga Day',
         description: 'SSD Yogashala & Kalakshetra celebrated International Yoga Day with a special assembly and yoga session, guided by Yoga Guru Kowda Mallesh.',
         photos: [yogaUtsav1, yogaUtsav2, yogaUtsav3, yogaUtsav4],
+        photoPositions: { 0: '50% 40%', 2: '50% 55%', 3: '50% 42%' },
         featured: true,
       },
       {
@@ -110,6 +111,7 @@ function Gallery() {
                     alt={event.title}
                     className="gallery-photo"
                     loading="lazy"
+                    style={event.photoPositions?.[index] ? { objectPosition: event.photoPositions[index] } : undefined}
                     onClick={() => setSelectedImage(photo)}
                   />
                 ))}

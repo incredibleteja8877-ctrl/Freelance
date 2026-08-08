@@ -81,7 +81,7 @@ nav li{
   background-color: #96700a;
 }
 .about,.schedule{
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 60px 32px;
 }
@@ -132,11 +132,18 @@ nav li{
 }
 
 .leaders-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  align-items: stretch;
   gap: 24px;
+  max-width: 1050px;
+  margin: 32px auto 0;
+}
+
+.leaders-grid > .vision-card:last-child {
+  grid-column: 1 / -1;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .vision-card {
@@ -144,11 +151,9 @@ nav li{
   border-radius: 16px;
   padding: 32px 24px;
   border: 3px solid #b8860b;
-  margin-top: 32px;
   text-align: center;
-  flex: 1;
   min-width: 280px;
-  max-width: 380px;
+  max-width: 520px;
 }
 
 .vision-intro {
@@ -196,6 +201,14 @@ nav li{
 }
 .footer a{
   color: #d4af37;
+}
+.footer-socials{
+  margin-top: 12px;
+  font-weight: bold;
+}
+.footer-social-divider{
+  margin: 0 10px;
+  color: #666;
 }
 .footerp{
   margin-top: 8px;
@@ -307,19 +320,16 @@ nav li{
   .about, .schedule, .contact {
     padding: 40px 20px;
   }
-}
-.founders-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
 
-.founder-card {
-  text-align: center;
-}
+  .leaders-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .leaders-grid > .vision-card:last-child {
+    grid-column: auto;
+    max-width: 400px;
+  }
+}
 .founder-photo {
   width: 180px;
   height: 180px;
@@ -333,12 +343,6 @@ nav li{
   color: #b8860b;
   font-weight: bold;
   font-size: 14px;
-}
-.founder-bio {
-  font-size: 14px;
-  color: #555;
-  max-width: 300px;
-  margin: 0 auto;
 }
 .app-container {
   display: flex;
@@ -524,6 +528,12 @@ nav li{
 
 .contact-form button:hover {
   background-color: #96700a;
+}
+
+.contact-form button:disabled,
+.modal-card button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .success-msg {

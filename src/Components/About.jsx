@@ -27,40 +27,45 @@ function About(){
                 <div className="vision-card">
                     <img src={malleshPhoto} alt="Kowda Mallesh" className="chairman-photo" />
                     <h3>Kowda Mallesh</h3>
-                    <p className="founder-role">Chairman & Yoga Guru</p>
+                    <p className="founder-role">Founder & Chairman, Siva Shakti Dhyana Yoga Charitable Trust</p>
                     <p className="vision-intro">
-                        Chairman Kowda Mallesh founded the organization with the vision of serving society through yoga, Indian culture, and value-based education. His focus is to:
+                        A Yoga Guru, Yoga Therapist, Meditation Teacher, and Spiritual Educator with 25+ years of yoga practice and 20+ years of teaching experience. He has trained MLAs, MLCs, and other distinguished individuals, integrating Yoga Therapy, Acupuncture & Acupressure, Counselling, and Bhagavad Gita teachings to promote physical wellbeing, mental clarity, and spiritual growth.
                     </p>
                     <ul className="vision-list">
-                        <li>Preserve and promote India's ancient traditions.</li>
-                        <li>Make yoga and cultural education accessible to everyone.</li>
-                        <li>Build a healthier, disciplined, and socially responsible community.</li>
-                        <li>Inspire the next generation to live with integrity, service, and respect for Indian values.</li>
+                        <li>Yoga Guru, Yoga Teacher & Yoga Therapist</li>
+                        <li>Master Diploma in Acupuncture & Acupressure; Diploma in Acupressure</li>
+                        <li>Meditation Teacher & Counsellor</li>
+                        <li>Bhagavad Gita Pracharak & Spiritualist</li>
                     </ul>
                 </div>
 
                 <div className="vision-card">
-                    <img src={purnaPhoto} alt="K Purna Sai" className="founder-photo" />
-                    <h3>K. Purna Sai</h3>
-                    <p className="founder-role">Founder & CEO</p>
+                    <img src={purnaPhoto} alt="Kowda Purna Sai" className="founder-photo" />
+                    <h3>Kowda Purna Sai</h3>
+                    <p className="founder-role">Founder & CEO, SSD Yogashala & Kalakshetra</p>
                     <p className="vision-intro">
-                        Founder & CEO K. Purna Sai leads the organization with the mission of creating a holistic learning ecosystem where every individual can grow in body, mind, and spirit. His major focus is to:
+                        A Yoga Teacher, World Yogasana Coach, National Yogasana Sports Judge, and Corporate Wellness Consultant with 19+ years of yoga practice and 8+ years of teaching experience. He has trained students for State & National-Level Yogasana competitions — including Khelo India participants — guiding them to merit positions and medals, and has served as a specialized trainer for MLAs, MLCs, and Government Officials across colleges, orphanages, and corporate organizations.
                     </p>
                     <ul className="vision-list">
-                        <li>Deliver high-quality yoga education and teacher training.</li>
-                        <li>Nurture talent in Kuchipudi, Western dance, Carnatic vocals, painting, and Vedic studies.</li>
-                        <li>Develop confident, healthy, and value-driven children through after-school programs.</li>
-                        <li>Empower youth with leadership, personality development, and lifelong wellness.</li>
-                        <li>Establish SSD Yogashala & Kalakshetra as a trusted center of excellence for yoga, arts, education, and holistic development across India.</li>
+                        <li>Level 5 Yoga Teacher & World Yogasana Coach</li>
+                        <li>National Yogasana Sports Judge – Level 1</li>
+                        <li>M.Sc. in Yoga & MBA; Diploma in Psychology & Holistic Wellness</li>
+                        <li>Master Diploma in Hijama / Cupping Therapy</li>
+                        <li>Aerial Yoga, Zumba, Aerobics, Sound Healing & Meditation Instructor</li>
+                        <li>Corporate Yoga & Wellness Consultant</li>
                     </ul>
+                    <p className="vision-intro">
+                        <strong>Core Expertise:</strong> Yoga • Yogasana Sports • Corporate Wellness • Meditation • Sound Healing • Aerial Yoga • Zumba • Aerobics • Holistic Wellness
+                    </p>
                 </div>
-            </div>
 
-            <div className="founders-grid">
-                <div className="founder-card">
+                <div className="vision-card">
                     <img src={vijayPhoto} alt="Vijay Kumar Kowda" className="founder-photo" />
                     <h3>Vijay Kumar Kowda</h3>
-                    <p className="founder-role">Co-Founder</p>
+                    <p className="founder-role">Co-Founder & 500-Hour Certified Yoga Teacher</p>
+                    <p className="vision-intro">
+                        A BBA graduate with 14+ years of yoga practice and 4+ years of teaching experience, specializing in Ashtanga, Hatha, Iyengar, and Vinyasa yoga with a strong focus on anatomy and alignment. He also serves as a State-Level Yogasana Judge for the Telangana Yogasana Sports Association, upholding traditional yoga methodology and practice.
+                    </p>
                 </div>
             </div>
         </section>

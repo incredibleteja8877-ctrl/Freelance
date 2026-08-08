@@ -11,6 +11,7 @@ import Highlights from './Components/Highlights.jsx'
 import News from './Components/News.jsx'
 import Reviews from './Components/Reviews.jsx'
 import Footer from './Components/Footer.jsx'
+import PrivacyPolicy from './Components/PrivacyPolicy.jsx'
 import WhatsAppButton from './Components/WhatsAppButton.jsx'
 import ApproveReview from './Components/ApproveReview.jsx'
 import ReviewPopup from './Components/ReviewPopup.jsx'
@@ -18,17 +19,14 @@ import FadeInSection from './Components/FadeInSection.jsx'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
-  const [approveReviewId, setApproveReviewId] = useState(null)
+  const [approveReviewId, setApproveReviewId] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('approveReview')
+  })
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [activePage])
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const id = params.get('approveReview')
-    if (id) setApproveReviewId(id)
-  }, [])
 
   useEffect(() => {
     const handleContextMenu = (e) => {
@@ -78,7 +76,13 @@ function App() {
         </div>
       )}
 
-      <Footer />
+      {activePage === 'privacy' && (
+        <div className="page">
+          <PrivacyPolicy onBack={() => setActivePage('home')} />
+        </div>
+      )}
+
+      <Footer onNavigate={setActivePage} />
       <WhatsAppButton />
       <ReviewPopup />
       {approveReviewId && (

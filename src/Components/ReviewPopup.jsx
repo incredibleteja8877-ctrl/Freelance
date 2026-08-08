@@ -33,7 +33,8 @@ function ReviewPopup() {
           }, 6000)
         }, 3000)
       } catch (error) {
-        // Popup is a nice-to-have, fail silently
+        // Popup is a nice-to-have, fail silently (but still log for debugging)
+        console.error(error)
       }
     }
 

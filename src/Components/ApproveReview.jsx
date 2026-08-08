@@ -17,6 +17,7 @@ function ApproveReview({ reviewId, onDone }) {
           setStatus('notfound')
         }
       } catch (error) {
+        console.error(error)
         setStatus('error')
       }
     }
@@ -29,6 +30,7 @@ function ApproveReview({ reviewId, onDone }) {
       await updateDoc(doc(db, 'reviews', reviewId), { approved: true })
       setStatus('approved')
     } catch (error) {
+      console.error(error)
       setStatus('error')
     }
   }
