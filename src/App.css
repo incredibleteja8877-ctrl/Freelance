@@ -405,6 +405,165 @@ nav li{
   color: #333;
 }
 
+.subscribe-popup {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 300px;
+  background: linear-gradient(160deg, #3b1d5e 0%, #6d2f8a 55%, #8a3aa0 100%);
+  border: 3px solid #b8860b;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  z-index: 1600;
+  animation: reviewPopupIn 0.5s ease;
+  text-align: center;
+}
+
+.subscribe-popup-close {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #eee;
+}
+
+.subscribe-popup-headline {
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.3;
+  margin: 4px 0 4px;
+  text-transform: uppercase;
+}
+
+.subscribe-popup-subtext {
+  color: #f4d160;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  margin-bottom: 14px;
+}
+
+.subscribe-popup-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.subscribe-popup-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.subscribe-popup-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.45);
+}
+
+.subscribe-popup-info {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+}
+
+.subscribe-popup-name {
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subscribe-popup-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 3px;
+  color: #666;
+}
+
+.spi-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.spi-like {
+  animation: spiPulse 0.6s ease 0.9s 2;
+}
+
+.spi-bell {
+  animation: spiRing 0.6s ease 0.4s 2;
+  transform-origin: top center;
+}
+
+.subscribe-popup-btn {
+  background: none;
+  border: 1.5px solid #999;
+  color: #333;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.subscribe-popup-btn.is-subscribed {
+  background-color: #cc0000;
+  border-color: #cc0000;
+  color: #fff;
+  animation: spiSubscribePop 0.4s ease;
+}
+
+.subscribe-popup-share {
+  display: inline-block;
+  margin-top: 14px;
+  background-color: #25d366;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.subscribe-popup-share:hover {
+  background-color: #1ebe57;
+}
+
+@keyframes spiPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@keyframes spiRing {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-15deg); }
+  40% { transform: rotate(15deg); }
+  60% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+}
+
+@keyframes spiSubscribePop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
 .whatsapp-button {
   position: fixed;
   bottom: 24px;
@@ -603,7 +762,8 @@ nav li{
   gap: 12px;
 }
 
-.modal-card input {
+.modal-card input,
+.modal-card select {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;

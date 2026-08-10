@@ -15,6 +15,7 @@ import PrivacyPolicy from './Components/PrivacyPolicy.jsx'
 import WhatsAppButton from './Components/WhatsAppButton.jsx'
 import ApproveReview from './Components/ApproveReview.jsx'
 import ReviewPopup from './Components/ReviewPopup.jsx'
+import SubscribePopup from './Components/SubscribePopup.jsx'
 import FadeInSection from './Components/FadeInSection.jsx'
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
       <Footer onNavigate={setActivePage} />
       <WhatsAppButton />
       <ReviewPopup />
+      <SubscribePopup />
       {approveReviewId && (
         <ApproveReview reviewId={approveReviewId} onDone={() => setApproveReviewId(null)} />
       )}

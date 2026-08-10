@@ -8,6 +8,7 @@ function BookingForm({ classInfo, onClose }) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
+  const [branch, setBranch] = useState('')
   const [status, setStatus] = useState('')
 
   const handleSubmit = async (e) => {
@@ -21,6 +22,7 @@ function BookingForm({ classInfo, onClose }) {
         category: classInfo.category,
         time: classInfo.time,
         days: classInfo.days || '',
+        branch: classInfo.branchSelectable ? branch : '',
         name,
         phone,
         email,
@@ -33,7 +35,7 @@ function BookingForm({ classInfo, onClose }) {
       name,
       phone,
       email,
-      class_name: classInfo.name,
+      class_name: classInfo.branchSelectable ? `${classInfo.name} (${branch} Branch)` : classInfo.name,
       class_days: classInfo.days || '',
       class_time: classInfo.time,
     },
@@ -64,6 +66,17 @@ function BookingForm({ classInfo, onClose }) {
             <p className="modal-subtitle">{classInfo.days ? `${classInfo.days}, ` : ''}{classInfo.time}</p>
 
             <form onSubmit={handleSubmit}>
+              {classInfo.branchSelectable && (
+                <select
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
+                  required
+                >
+                  <option value="" disabled>Select Branch</option>
+                  <option value="Shapur">Shapur</option>
+                  <option value="Suraram">Suraram</option>
+                </select>
+              )}
               <input
                 type="text"
                 placeholder="Your Name"
