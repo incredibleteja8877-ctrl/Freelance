@@ -578,11 +578,18 @@ nav li{
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 1500;
   transition: transform 0.2s ease;
+  animation: whatsapp-pulse 2.4s infinite;
 }
 
 .whatsapp-button:hover {
   transform: scale(1.08);
 }
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+
 
 .footer {
   margin-top: auto;
@@ -792,6 +799,56 @@ nav li{
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.thank-you-card {
+  text-align: center;
+  padding: 40px 32px;
+}
+
+.modal-close-circle {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #b8860b;
+  color: #fff;
+  border: 3px solid #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close-circle:hover {
+  background-color: #96700a;
+}
+
+.thank-you-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.thank-you-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 20px;
+}
+
+.thank-you-subtitle {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.thank-you-message {
+  color: #555;
+  line-height: 1.5;
 }
 
 .modal-card textarea {

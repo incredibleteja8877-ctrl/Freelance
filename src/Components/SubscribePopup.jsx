@@ -9,14 +9,7 @@ function SubscribePopup() {
   const [subscribed, setSubscribed] = useState(false)
 
   useEffect(() => {
-    const alreadyShown = sessionStorage.getItem('subscribePopupShown')
-    if (alreadyShown) return
-
-    const showTimer = setTimeout(() => {
-      setVisible(true)
-      sessionStorage.setItem('subscribePopupShown', 'true')
-    }, 10000)
-
+    const showTimer = setTimeout(() => setVisible(true), 10000)
     return () => clearTimeout(showTimer)
   }, [])
 
@@ -24,7 +17,7 @@ function SubscribePopup() {
     if (!visible) return
 
     const subscribeTimer = setTimeout(() => setSubscribed(true), 1200)
-    const hideTimer = setTimeout(() => setVisible(false), 3000)
+    const hideTimer = setTimeout(() => setVisible(false), 5000)
 
     return () => {
       clearTimeout(subscribeTimer)

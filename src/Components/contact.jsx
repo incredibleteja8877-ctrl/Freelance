@@ -145,10 +145,23 @@ function Contact() {
       </form>
 
       {status === 'sending' && <p>Sending...</p>}
-      {status === 'sent' && <p className="success-msg">Message sent! We'll get back to you soon.</p>}
       {status === 'error' && <p className="error-msg">Something went wrong. Please try again.</p>}
 
       <p>Or reach us directly at <a href="mailto:ssdyct25@gmail.com">ssdyct25@gmail.com</a> or call <a href="tel:+919030405476">+91 90304 05476</a></p>
+
+      {status === 'sent' && (
+        <div className="modal-overlay" onClick={() => setStatus('')}>
+          <div className="modal-card thank-you-card" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-circle" onClick={() => setStatus('')}>×</button>
+            <h3 className="thank-you-title">Thank You</h3>
+            <hr className="thank-you-divider" />
+            <p className="thank-you-subtitle">For Reaching Out!</p>
+            <p className="thank-you-message">
+              We've received your message and will get back to you soon.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

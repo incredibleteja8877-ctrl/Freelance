@@ -51,14 +51,17 @@ function BookingForm({ classInfo, onClose }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>×</button>
+      <div className={`modal-card${status === 'booked' ? ' thank-you-card' : ''}`} onClick={(e) => e.stopPropagation()}>
+        <button className={status === 'booked' ? 'modal-close-circle' : 'modal-close'} onClick={onClose}>×</button>
 
         {status === 'booked' ? (
           <>
-            <h3>You're booked!</h3>
-            <p>We've reserved your spot in <strong>{classInfo.name}</strong>. See you there!</p>
-            <button className="modal-done-btn" onClick={onClose}>Close</button>
+            <h3 className="thank-you-title">Thank You</h3>
+            <hr className="thank-you-divider" />
+            <p className="thank-you-subtitle">For Booking Your Session!</p>
+            <p className="thank-you-message">
+              We've reserved your spot in <strong>{classInfo.name}</strong>. See you there!
+            </p>
           </>
         ) : (
           <>
